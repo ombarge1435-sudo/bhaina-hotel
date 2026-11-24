@@ -1,0 +1,880 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #171714;
+  --cream: #f7f3e9;
+  --gold: #f3c52d;
+  --gold2: #e5a900;
+  --muted: #77766e;
+  --green: #587a43;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* HEADER */
+
+.site-header {
+  height: 82px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #171714;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #39372d;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 19px;
+}
+
+.brand strong {
+  display: block;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1.3px;
+  font-size: 17px;
+}
+
+.brand small {
+  display: block;
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-top: 3px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 13px;
+  color: #e9e5d8;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.nav-cta {
+  background: var(--gold);
+  color: #171714;
+  padding: 12px 19px;
+  border-radius: 4px;
+  font-weight: 800;
+}
+
+.nav-cta:hover {
+  color: #171714 !important;
+  background: #ffdc59;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 27px;
+}
+
+/* HERO SECTION */
+
+.hero {
+  min-height: 620px;
+  padding: 75px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+  background: radial-gradient(
+    circle at 80% 30%,
+    #353323 0,
+    #171714 48%,
+    #111 100%
+  );
+  color: white;
+  overflow: hidden;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 800;
+  color: #b38b12;
+}
+
+.hero h1,
+.section h2,
+.biryani-text h2,
+.about-section h2,
+.contact-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(48px, 6vw, 76px);
+  line-height: 1.02;
+  margin: 18px 0;
+}
+
+.hero h1 em,
+.section h2 em,
+.biryani-text h2 em,
+.about-section h2 em,
+.contact-section h2 em {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.hero-copy > p {
+  max-width: 470px;
+  color: #c9c5b9;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  margin-top: 32px;
+}
+
+.btn {
+  padding: 15px 22px;
+  font-size: 13px;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #171714;
+}
+
+.btn-gold span {
+  margin-left: 18px;
+}
+
+.text-link {
+  font-size: 13px;
+  color: #eee;
+}
+
+.text-link span {
+  color: var(--gold);
+  margin-left: 8px;
+}
+
+.hero-note {
+  margin-top: 52px;
+  color: #aaa;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #8fb36a;
+  margin-right: 9px;
+}
+
+.hero-art {
+  position: relative;
+  max-width: 440px;
+  justify-self: center;
+}
+
+.hero-image-wrap {
+  width: min(100%, 390px);
+  height: 450px;
+  overflow: hidden;
+  border: 7px solid #e7bd20;
+  transform: rotate(2deg);
+  box-shadow: 20px 20px 0 #423a17;
+}
+
+.hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.price-stamp {
+  position: absolute;
+  right: -55px;
+  bottom: 25px;
+  width: 135px;
+  height: 135px;
+  background: var(--gold);
+  border: 6px solid #171714;
+  outline: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #171714;
+  transform: rotate(9deg);
+  box-shadow: 0 8px 25px #0008;
+}
+
+.price-stamp small {
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.price-stamp strong {
+  font-family: "Playfair Display", serif;
+  font-size: 39px;
+}
+
+/* QUICK INFORMATION */
+
+.quick-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 27px 8%;
+  background: #e9e2d1;
+  gap: 20px;
+}
+
+.quick-info > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+}
+
+.info-icon {
+  width: 42px;
+  height: 42px;
+  background: #171714;
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.quick-info small,
+.address-card small {
+  display: block;
+  color: #8a6b10;
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  font-weight: 800;
+}
+
+.quick-info strong {
+  display: block;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* MENU SECTION */
+
+.section {
+  padding: 95px 8%;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 45px;
+}
+
+.section h2,
+.about-section h2,
+.contact-section h2 {
+  font-size: clamp(39px, 5vw, 58px);
+  margin: 12px 0;
+}
+
+.section-heading > p {
+  max-width: 340px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.menu-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 65px;
+  align-items: start;
+}
+
+.menu-group {
+  margin-bottom: 35px;
+}
+
+.group-title {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 17px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #d9d2c2;
+}
+
+.group-title > span {
+  font-size: 29px;
+}
+
+.group-title h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  margin: 0;
+}
+
+.group-title small {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.veg h3 {
+  color: var(--green);
+}
+
+.nonveg h3 {
+  color: #a74325;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.menu-item i {
+  height: 1px;
+  border-bottom: 2px dotted #c8b878;
+  flex: 1;
+}
+
+.menu-item b {
+  background: #f2d85b;
+  color: #332a0b;
+  padding: 7px 13px;
+  border-radius: 5px;
+  min-width: 61px;
+  text-align: center;
+}
+
+.menu-poster {
+  position: relative;
+}
+
+.menu-poster img {
+  width: 100%;
+  max-height: 760px;
+  object-fit: cover;
+  object-position: top;
+  border: 8px solid white;
+  box-shadow: 0 18px 45px #1e1a1020;
+}
+
+.poster-caption {
+  background: #171714;
+  color: var(--gold);
+  padding: 16px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+
+/* BIRYANI SECTION */
+
+.biryani-banner {
+  background: #1b1b16;
+  color: white;
+  padding: 65px 9%;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+  gap: 45px;
+  overflow: hidden;
+}
+
+.biryani-text h2 {
+  font-size: clamp(55px, 7vw, 88px);
+  margin: 15px 0;
+}
+
+.biryani-text > p {
+  color: #c4c0b4;
+  max-width: 360px;
+  line-height: 1.7;
+}
+
+.biryani-price {
+  margin-top: 25px;
+  color: var(--gold);
+  font-size: 20px;
+}
+
+.biryani-price strong {
+  font-family: "Playfair Display", serif;
+  font-size: 54px;
+  margin-left: 10px;
+}
+
+.biryani-photo {
+  height: 350px;
+  overflow: hidden;
+  border: 5px solid var(--gold);
+  border-radius: 5px;
+  transform: rotate(-2deg);
+}
+
+.biryani-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+/* STUDENT SECTION */
+
+.student-section {
+  background: #f0eadc;
+}
+
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.student-card {
+  background: white;
+  text-align: center;
+  padding: 25px 15px 22px;
+  border-radius: 8px;
+  border: 1px solid #e5dcc8;
+  box-shadow: 0 10px 25px #44391a0b;
+}
+
+.meal-emoji {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: #f8f0d5;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  margin: 0 auto 15px;
+}
+
+.student-card h3 {
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  font-size: 21px;
+}
+
+.student-card p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.student-card strong {
+  display: inline-block;
+  background: #b72e1f;
+  color: white;
+  border-radius: 30px;
+  padding: 9px 25px;
+  font-size: 22px;
+  margin-top: 7px;
+}
+
+.student-note {
+  text-align: center;
+  color: #9a7710;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-top: 30px;
+}
+
+/* ABOUT SECTION */
+
+.about-section {
+  padding: 85px 12%;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: 55px;
+  background: #e7dfce;
+}
+
+.about-mark {
+  width: 155px;
+  height: 155px;
+  border: 5px double #c99d12;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: "Playfair Display", serif;
+  font-size: 54px;
+  font-weight: 900;
+  color: #a77c0a;
+  position: relative;
+}
+
+.about-mark span {
+  font-size: 20px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+.about-section p,
+.contact-section p {
+  color: #68665e;
+  line-height: 1.8;
+  max-width: 560px;
+  font-size: 14px;
+}
+
+/* CONTACT SECTION */
+
+.contact-section {
+  padding: 85px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.address-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #171714;
+  color: white;
+  padding: 27px 32px;
+  min-width: 330px;
+  border-left: 5px solid var(--gold);
+}
+
+.pin {
+  font-size: 37px;
+  color: var(--gold);
+}
+
+.address-card strong {
+  display: block;
+  margin-top: 7px;
+  font-size: 16px;
+}
+
+.address-card p {
+  margin: 5px 0 0;
+  color: #c6c0b2;
+  font-size: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #111;
+  color: white;
+  padding: 30px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+footer > p {
+  color: #c3a52d;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.footer-brand .brand-mark {
+  width: 38px;
+  height: 38px;
+}
+
+.footer-brand strong {
+  font-size: 14px;
+}
+
+.back-top {
+  font-size: 12px;
+  color: var(--gold);
+}
+
+/* TABLET RESPONSIVE */
+
+@media (max-width: 850px) {
+
+  .site-header {
+    padding: 0 5%;
+  }
+
+  nav {
+    gap: 16px;
+  }
+
+  .hero {
+    padding: 65px 6%;
+    gap: 25px;
+  }
+
+  .price-stamp {
+    right: -25px;
+  }
+
+  .section {
+    padding: 75px 6%;
+  }
+
+  .menu-layout {
+    gap: 30px;
+  }
+
+  .quick-info {
+    padding: 25px 4%;
+  }
+
+  .biryani-banner {
+    padding: 55px 6%;
+  }
+
+  .student-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-section {
+    padding: 70px 6%;
+  }
+
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 650px) {
+
+  .site-header {
+    height: 70px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #171714;
+    padding: 18px 6% 25px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    padding: 13px 0;
+    border-bottom: 1px solid #39372d;
+  }
+
+  .nav-cta {
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 55px 7% 65px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .hero-copy > p {
+    margin: 0 auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-note {
+    margin-top: 30px;
+  }
+
+  .hero-art {
+    margin: 20px auto 0;
+    width: 85%;
+  }
+
+  .hero-image-wrap {
+    height: 390px;
+    width: 100%;
+  }
+
+  .price-stamp {
+    right: -30px;
+    width: 112px;
+    height: 112px;
+  }
+
+  .price-stamp strong {
+    font-size: 32px;
+  }
+
+  .quick-info {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 25px 7%;
+  }
+
+  .quick-info > div {
+    justify-content: flex-start;
+  }
+
+  .section {
+    padding: 65px 7%;
+  }
+
+  .section-heading {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .section-heading > p {
+    margin-top: 14px;
+  }
+
+  .menu-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-poster {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .biryani-banner {
+    grid-template-columns: 1fr;
+    padding: 55px 7%;
+    text-align: center;
+  }
+
+  .biryani-text > p {
+    margin: 0 auto;
+  }
+
+  .biryani-photo {
+    height: 300px;
+  }
+
+  .student-grid {
+    gap: 12px;
+  }
+
+  .student-card {
+    padding: 20px 8px;
+  }
+
+  .student-card h3 {
+    font-size: 18px;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 65px 8%;
+    gap: 25px;
+  }
+
+  .about-mark {
+    margin: auto;
+    width: 125px;
+    height: 125px;
+    font-size: 43px;
+  }
+
+  .about-section p {
+    margin: 0 auto;
+  }
+
+  .contact-section {
+    display: block;
+    padding: 65px 7%;
+  }
+
+  .address-card {
+    min-width: 0;
+    margin-top: 25px;
+    padding: 22px;
+  }
+
+  .contact-section h2 {
+    font-size: 44px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 6%;
+    gap: 12px;
+  }
+
+}
